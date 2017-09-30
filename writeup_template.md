@@ -1,27 +1,15 @@
 # **Finding Lane Lines on the Road** 
 
-## Project 
-
-### You can use this file as a template for your writeup if you want to submit it as a markdown file. But feel free to use some other method and submit a pdf if you prefer.
-
----
-
-**Finding Lane Lines on the Road**
-
-The goals / steps of this project are the following:
-* Make a pipeline that finds lane lines on the road
-* Reflect on your work in a written report
-
 ### Reflection
 
 ### 1. Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
 
 The pipeline I designed consisted of 7 discrete stages. There are as follows...
-# 1) Filter the image by pixel value.
+#### 1) Filter the image by pixel value.
 
 I started by using cv2.inRange() to throw away all of the pixels that were below a certain threshold. I specifically ignored throwing away data related to the blue channel. This was so that I could keep yellow pixels included.
 
-# 2) Convert the image to grayscale.
+#### 2) Convert the image to grayscale.
 
 3) Blur the image.
 
