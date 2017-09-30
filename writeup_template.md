@@ -25,6 +25,7 @@ The goals / steps of this project are the following:
 
 The pipeline I designed consisted of 7 discrete stages. There are as follows...
 1) Filter the image by pixel value.
+
 I started by using cv2.inRange() to throw away all of the pixels that were below a certain threshold. I specifically ignored thowing away data related to the blue channel. This was so that I could keep yellow pixels included.
 
 In order to draw a single line on the left and right lanes, I modified the draw_lines() function by ...
