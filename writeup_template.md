@@ -12,23 +12,16 @@ The goals / steps of this project are the following:
 * Make a pipeline that finds lane lines on the road
 * Reflect on your work in a written report
 
-
-[//]: # (Image References)
-
-[image1]: ./examples/grayscale.jpg "Grayscale"
-
----
-
 ### Reflection
 
 ### 1. Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
 
 The pipeline I designed consisted of 7 discrete stages. There are as follows...
-1) Filter the image by pixel value.
+# 1) Filter the image by pixel value.
 
 I started by using cv2.inRange() to throw away all of the pixels that were below a certain threshold. I specifically ignored throwing away data related to the blue channel. This was so that I could keep yellow pixels included.
 
-2) Convert the image to grayscale.
+# 2) Convert the image to grayscale.
 
 3) Blur the image.
 
@@ -43,10 +36,6 @@ I split the image into left and right side during part of the pipeline so that I
 I modified the draw_lines() function to keep track of the average values (x1,y2,x2,y2) to get some representation of what the "average" line was for on side of the image. I then used these average points to find and average slope for one of the lanes. Then, using the magic of (y = mx + b) I calculated the intercepts of where the average line would hit if extended to the middle and bottom of the image frame. I then took these intercept points and used then in cv2.line() to draw my extrapolated lane lines.
 
 7) Combine the left and right sides back together to form one image and then composite this on the original image.
-
-If you'd like to include images to show how the pipeline works, here is how to include an image: 
-
-![alt text](test_images/solidWhiteCurve.jpg?raw=true "Title")
 
 
 ### 2. Identify potential shortcomings with your current pipeline
